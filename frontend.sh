@@ -33,9 +33,9 @@ dnf install nginx -y &>> $LOGS_FILE
 validate $? "Installing nginx"
 sudo dnf reinstall nginx -y
 
-systemctl enable nginx 
-systemctl start nginx 
-validate $? "Enabling & Starting nginx"
+# systemctl enable nginx 
+# systemctl start nginx 
+# validate $? "Enabling & Starting nginx"
 curl -o /tmp/frontend.zip https://expense-joindevops.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
 validate $? "Downloading code"
 cd /usr/share/nginx/html 
