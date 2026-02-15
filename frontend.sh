@@ -34,8 +34,6 @@ validate $? "Installing nginx"
 systemctl enable nginx 
 systemctl start nginx 
 validate $? "Enabling & Starting nginx"
-rm -rf /usr/share/nginx/html/* 
-validate $? "removing content from the file"
 curl -o /tmp/frontend.zip https://expense-joindevops.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
 validate $? "Downloading code"
 cd /usr/share/nginx/html 
