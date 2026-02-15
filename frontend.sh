@@ -31,6 +31,8 @@ validate(){
 
 dnf install nginx -y &>> $LOGS_FILE
 validate $? "Installing nginx"
+sudo dnf reinstall nginx -y
+
 systemctl enable nginx 
 systemctl start nginx 
 validate $? "Enabling & Starting nginx"
