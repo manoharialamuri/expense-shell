@@ -45,6 +45,6 @@ validate $? "unzipping frontend code"
 rm -rf /etc/nginx/nginx.conf
 cp $SCRIPT_DIR/expense.config /etc/nginx/default.d/expense.conf
 validate $? "copying nginx content"
-systemctl restart nginx 
-validate $? "restarting nginx"
+systemctl daemon-reload
+validate $? "reloaded nginx"
 
