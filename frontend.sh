@@ -31,18 +31,17 @@ validate(){
 
 dnf install nginx -y &>> $LOGS_FILE
 validate $? "Installing nginx"
-sudo dnf reinstall nginx -y
-
-# systemctl enable nginx 
-# systemctl start nginx 
-# validate $? "Enabling & Starting nginx"
+systemctl enable nginx 
+systemctl start nginx 
+validate $? "Enabling & Starting nginx"
+rm -rf /usr/share/nginx/html/*
+validate $? "remove default file"
 curl -o /tmp/frontend.zip https://expense-joindevops.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
 validate $? "Downloading code"
 cd /usr/share/nginx/html 
 validate $? "moving to html directory"
 unzip /tmp/frontend.zip
 validate $? "unzipping frontend code"
-rm -rf /etc/nginx/nginx.conf
 cp $SCRIPT_DIR/expense.config /etc/nginx/default.d/expense.conf
 validate $? "copying nginx content"
 
