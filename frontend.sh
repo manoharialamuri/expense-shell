@@ -10,7 +10,6 @@ Y="\e[33m"
 B="\e[34m"
 N="\e[0m"
 SCRIPT_DIR=$PWD
-#MONGO_HOST=mongodb.daws88s.store
 
 
 if [ $USERID -ne 0 ]; then
