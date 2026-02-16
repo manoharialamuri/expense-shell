@@ -10,7 +10,7 @@ Y="\e[33m"
 B="\e[34m"
 N="\e[0m"
 SCRIPT_DIR=$PWD
-MYSQL_HOST=mysql.daws88s.store
+MYSQL_HOST=172.31.94.57
 DB_NAME="backend"
 
 
